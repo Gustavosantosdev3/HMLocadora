@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: space-between; /* Espaçamento igual entre os conjuntos */
+    padding: 20px;
+}
+
+.frases {
+    flex: 1; /* Ocupa igualmente o espaço disponível no contêiner */
+    border: 1px solid #ccc; /* Adiciona uma borda para separação visual */
+    padding: 10px;
+}
