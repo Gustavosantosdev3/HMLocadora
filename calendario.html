@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<div class="new-search new-search-responsive-relative pd-new-search">
+        <div class="content">
+            <div class="content-fluid">
+
+                <form data-gafill="{&quot;category&quot;:&quot;Geral&quot;, &quot;action&quot;:&quot;Alugue Carro:Preencheu&quot;}" id="formSearchEngine" method="POST" action="/reserva/info">
+
+                      <h2 class="hide-mobile">Alugue um carro</h2>
+                      <h2 class="hide-desktop">Alugue um carro</h2>
+
+                    <div class="search-content" id="search-content">
+
+                        <div class="retirada search-field-40">
+                            <label class="hide-mobile">Local de Retirada</label>
+                            <label class="hide-desktop">Retirada</label>
+                            
+                            
+                                <input type="text" name="loja" placeholder="Onde você quer alugar?" class="search-input new-search-field local autocomplete-retirada ui-autocomplete-input" autocomplete="off">
+                                <span class="locale-icon"></span>
+                                <input type="hidden" name="loja_iata" size="100">
+                                <input type="hidden" name="loja_iata_id" id="loja_iata_id" size="100">
+                                <input type="hidden" name="cordx" size="100">
+                                <input type="hidden" name="cordy" size="100">
+
+                                <input type="hidden" id="loja_operationTime" name="loja_operationTime">
+                                <input type="hidden" id="loja_is24h" name="loja_is24h">
+
+
+                                <div class="local-area">
+                                    <div class="local-option-area">
+                                        <div class="local-option" id="searchLojasRetirada">
+
+                                        <ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul></div>
+                                        <div class="local-detail">
+                                            <h3 id="local-info-loja" class="local-info-loja">Local - Informações da
+                                                loja</h3>
+
+                                            <h3>Horário de Funcionamento da Loja</h3>
+                                            <ul id="local-info-horario" class="local-info-horario"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <!--
+                            <label data-gaclick="{'category':'Geral', 'action':'Devolver Outra Loja:Click'}">
+                                <input data-gaclick="{'category':'Geral', 'action':'Devolver Outra Loja:Click'}" type="checkbox" class="mrs" id="check_loja" name="check_loja">
+                                Devolver em outra loja
+                            </label>
+                            -->
+
+                        </div>
+
+                        <span class="check-search hide-mobile">
+
+                            <div class="col-sm-12 col-md-6 col-lg-6">
+                                <!-- <input type="checkbox" class="check-other custom" id="devolver_em_outra_loja">
+                                <label for="devolver_em_outra_loja">Devolver em outra loja</label> -->
+
+                                <div class="check-outra-loja">
+                                    <label for="devolver_em_outra_loja" class="check-outra">
+                                        Devolver em outra loja
+                                        <input type="checkbox" class="check-other custom" id="devolver_em_outra_loja">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+
+
+                        </span>
+
+
+                        <div class="retirada-outro search-field-20 ativo" id="desktop_outro_local_devolucao" style="display: none;">
+                            <label class="hide-mobile">Local de Devolução</label>
+                            <div id="mobile_content_devolucao" class="ativo hide-mobile">
+                                <input type="text" name="lojad" placeholder="Onde você vai devolver?" class="search-input new-search-field local autocomplete-devolucao ui-autocomplete-input" onfocusout="dataLayerFieldVerify()" autocomplete="off">
+                                <span class="locale-icon devolucao"></span>
+                                <input type="hidden" name="lojad_iata" size="100">
+                                <input type="hidden" name="lojad_iata_id" id="lojad_iata_id" size="100">
+                                <input type="hidden" name="cordx" size="100" id="devolucao_cordx">
+                                <input type="hidden" name="cordy" size="100" id="devolucao_cordy">
+                                <input type="hidden" id="lojad_operationTime" name="lojad_operationTime">
+                                <input type="hidden" id="lojad_is24h" name="lojad_is24h">
+
+
+                                <div class="local-area">
+                                    <div class="local-option-area">
+                                        <div class="local-option" id="searchLojasDevolucao">
+
+                                        <ul id="ui-id-2" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul><ul id="ui-id-3" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul><ul id="ui-id-4" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front" style="display: none;"></ul></div>
+                                        <div class="local-detail">
+                                            <h3 id="local-info-loja" class="local-info-loja">Local - Informações da
+                                                loja</h3>
+
+                                            <h3>Horário de Funcionamento da Loja</h3>
+                                            <ul id="local-info-horario" class="local-info-horario"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="search-field-20 retirada-campo">
+
+                            <label class="hide-mobile">Data e Hora de Retirada</label>
+                            
+                            <div class="field-div">
+                                <div class="field-div-date">
+                                    <input type="text" name="data_retirada" placeholder="Quando?" class="new-date reset-input" id="data_retirada" readonly="" onchange="changeDateTime($(this));" onfocusout="dataLayerFieldVerify()">
+
+                                    <input type="hidden" id="retirada2" name="retirada2" value="10/02/2023">
+                                    <span class="selErrorDate error-date hidden-xs" style="display: none">Datas Inválidas</span>
+                                </div>
+                                <div class="divider-field-div"></div>
+                                <div class="field-div-time container_horaRetirada container_horaDevolucao" id="container_horaRetirada">
+                                    <select class="reset-input time-search" id="hora_retirada" name="hora_retirada" onchange="changeTime();" onfocusout="dataLayerFieldVerify()">
+                                        <option value="00:00">00:00
+                                        </option>
+
+                                        <option value="00:30">00:30
+                                        </option>
+
+                                        <option value="01:00">01:00
+                                        </option>
+
+                                        <option value="01:30">01:30
+                                        </option>
+
+                                        <option value="02:00">02:00
+                                        </option>
+
+                                        <option value="02:30">02:30
+                                        </option>
+
+                                        <option value="03:00">03:00
+                                        </option>
+
+                                        <option value="03:30">03:30
+                                        </option>
+
+                                        <option value="04:00">04:00
+                                        </option>
+
+                                        <option value="04:30">04:30
+                                        </option>
+
+                                        <option value="05:00">05:00
+                                        </option>
+
+                                        <option value="05:30">05:30
+                                        </option>
+
+                                        <option value="06:00">06:00
+                                        </option>
+
+                                        <option value="06:30">06:30
+                                        </option>
+
+                                        <option value="07:00">07:00
+                                        </option>
+
+                                        <option value="07:30">07:30
+                                        </option>
+
+                                        <option value="08:00">08:00
+                                        </option>
+
+                                        <option value="08:30">08:30
+                                        </option>
+
+                                        <option value="09:00">09:00
+                                        </option>
+
+                                        <option value="09:30">09:30
+                                        </option>
+
+                                        <option value="10:00">10:00
+                                        </option>
+
+                                        <option value="10:30">10:30
+                                        </option>
+
+                                        <option value="11:00">11:00
+                                        </option>
+
+                                        <option value="11:30">11:30
+                                        </option>
+
+                                        <option value="12:00">12:00
+                                        </option>
+
+                                        <option value="12:30">12:30
+                                        </option>
+
+                                        <option value="13:00">13:00
+                                        </option>
+
+                                        <option value="13:30">13:30
+                                        </option>
+
+                                        <option value="14:00">14:00
+                                        </option>
+
+                                        <option value="14:30">14:30
+                                        </option>
+
+                                        <option value="15:00">15:00
+                                        </option>
+
+                                        <option value="15:30">15:30
+                                        </option>
+
+                                        <option value="16:00">16:00
+                                        </option>
+
+                                        <option value="16:30">16:30
+                                        </option>
+
+                                        <option value="17:00">17:00
+                                        </option>
+
+                                        <option value="17:30">17:30
+                                        </option>
+
+                                        <option value="18:00">18:00
+                                        </option>
+
+                                        <option value="18:30">18:30
+                                        </option>
+
+                                        <option value="19:00">19:00
+                                        </option>
+
+                                        <option value="19:30">19:30
+                                        </option>
+
+                                        <option value="20:00">20:00
+                                        </option>
+
+                                        <option value="20:30">20:30
+                                        </option>
+
+                                        <option value="21:00">21:00
+                                        </option>
+
+                                        <option value="21:30">21:30
+                                        </option>
+
+                                        <option value="22:00">22:00
+                                        </option>
+
+                                        <option value="22:30">22:30
+                                        </option>
+
+                                        <option value="23:00">23:00
+                                        </option>
+
+                                        <option value="23:30">23:30
+                                        </option>
+
+                                    </select>
+
+                                    <div class="tooltip-semHorario">
+                                        A Unidade escolhida, não possui horário de retirada disponível nesta data.
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <style>
+
+
+.container_horaDevolucao {
+    position: relative;
+}
+
+.tooltip-semHorario {
+    border-radius: 3px;
+    border: 1px solid rgba(250, 125, 2, 0.3);
+    padding: 4px;
+    position: absolute;
+    width: 300px;
+    background-color: #fff;
+    right: -41px;
+    top: 30px;
+    text-align: center;
+    display: none;
+}
+
+.container_horaDevolucao.semHorario:hover .tooltip-semHorario {
+  visibility: visible;
+  display: block;
+}
+</style>
+
+
+                        </div>
+
+                        <div class="search-field-20">
+
+                            <label class="hide-mobile">Data e Hora de Devolução</label>
+                            
+                            <div class="flex-50 hide-desktop">
+                                <label>Devolução</label>
+
+                                <div class="mesma_localidade">
+                                    <span class="f12 fn">Mesma localidade</span>
+                                    <a aria-label="Clique se deseja devolver em outra loja" href="#" class="switch on" data-target="#devolver_em_outra_loja" data-contrario="true"></a>
+                                </div>
+                            </div>
+
+                            <div id="mobile_outro_local_devolucao" class="hide-desktop hide-mobile" style="display: none;"></div>
+
+                            <div class="field-div">
+                                <div class="field-div-date">
+                                    <input type="text" name="data_devolucao" placeholder="Até quando?" id="data_devolucao" class="reset-input new-date" readonly="" onchange="changeDateTime($(this));">
+                                    <input type="hidden" id="devolucao2" name="devolucao2">
+                                    <span class="selErrorDate error-date hidden-xs" style="display: none">Datas Inválidas</span>
+                                </div>
+                                <div class="divider-field-div"></div>
+                                <div class="field-div-time container_horaDevolucao container_horaRetirada" id="container_horaDevolucao">
+                                    <select class="reset-input time-search" name="hora_devolucao" id="hora_devolucao" onchange="changeTime();" onfocusout="dataLayerFieldVerify()">
+
+                                        <option value="00:00">00:00
+                                        </option>
+
+                                        <option value="00:30">00:30
+                                        </option>
+
+                                        <option value="01:00">01:00
+                                        </option>
+
+                                        <option value="01:30">01:30
+                                        </option>
+
+                                        <option value="02:00">02:00
+                                        </option>
+
+                                        <option value="02:30">02:30
+                                        </option>
+
+                                        <option value="03:00">03:00
+                                        </option>
+
+                                        <option value="03:30">03:30
+                                        </option>
+
+                                        <option value="04:00">04:00
+                                        </option>
+
+                                        <option value="04:30">04:30
+                                        </option>
+
+                                        <option value="05:00">05:00
+                                        </option>
+
+                                        <option value="05:30">05:30
+                                        </option>
+
+                                        <option value="06:00">06:00
+                                        </option>
+
+                                        <option value="06:30">06:30
+                                        </option>
+
+                                        <option value="07:00">07:00
+                                        </option>
+
+                                        <option value="07:30">07:30
+                                        </option>
+
+                                        <option value="08:00">08:00
+                                        </option>
+
+                                        <option value="08:30">08:30
+                                        </option>
+
+                                        <option value="09:00">09:00
+                                        </option>
+
+                                        <option value="09:30">09:30
+                                        </option>
+
+                                        <option value="10:00">10:00
+                                        </option>
+
+                                        <option value="10:30">10:30
+                                        </option>
+
+                                        <option value="11:00">11:00
+                                        </option>
+
+                                        <option value="11:30">11:30
+                                        </option>
+
+                                        <option value="12:00">12:00
+                                        </option>
+
+                                        <option value="12:30">12:30
+                                        </option>
+
+                                        <option value="13:00">13:00
+                                        </option>
+
+                                        <option value="13:30">13:30
+                                        </option>
+
+                                        <option value="14:00">14:00
+                                        </option>
+
+                                        <option value="14:30">14:30
+                                        </option>
+
+                                        <option value="15:00">15:00
+                                        </option>
+
+                                        <option value="15:30">15:30
+                                        </option>
+
+                                        <option value="16:00">16:00
+                                        </option>
+
+                                        <option value="16:30">16:30
+                                        </option>
+
+                                        <option value="17:00">17:00
+                                        </option>
+
+                                        <option value="17:30">17:30
+                                        </option>
+
+                                        <option value="18:00">18:00
+                                        </option>
+
+                                        <option value="18:30">18:30
+                                        </option>
+
+                                        <option value="19:00">19:00
+                                        </option>
+
+                                        <option value="19:30">19:30
+                                        </option>
+
+                                        <option value="20:00">20:00
+                                        </option>
+
+                                        <option value="20:30">20:30
+                                        </option>
+
+                                        <option value="21:00">21:00
+                                        </option>
+
+                                        <option value="21:30">21:30
+                                        </option>
+
+                                        <option value="22:00">22:00
+                                        </option>
+
+                                        <option value="22:30">22:30
+                                        </option>
+
+                                        <option value="23:00">23:00
+                                        </option>
+
+                                        <option value="23:30">23:30
+                                        </option>
+
+                                    </select>
+
+                                    <div class="tooltip-semHorario">
+                                        A Unidade escolhida, não possui horário de retirada disponível nesta data.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div id="mobile-codigo-promocional" class="hide-desktop hide-mobile" style="display: none;"></div>
+
+                        <button class="search-button">Buscar <img src="/gulp/build/images/arrow-right.svg" alt="Entrar Icon" class="mli-4"></button>
+                    </div>
+            </form></div>
+        </div>
+    </div>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
